@@ -1,7 +1,7 @@
 # para el servidor de DNS
 docker pull sameersbn/bind:latest
 # obtiene la imagen
-docker build -t sameersbn/bind github.com/sameersbn/docker-bind	
+docker build -t sameersbn/bind github.com/sameersbn/docker-bind
 # buildea la imagen
 docker run --name bind -d --restart=always \
   --publish 53:53/udp --publish 10000:10000 \
@@ -14,7 +14,3 @@ docker run --name bind -d --restart=always \
 docker-compose build
 docker-compose up -d
 #hago un docker inspect paara ver cuàl es la ip del servidor redis
-
-
-#parar un proceso que corre en un puerto
-sudo kill `sudo lsof -t -i:9001`

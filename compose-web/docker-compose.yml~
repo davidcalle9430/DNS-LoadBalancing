@@ -1,4 +1,4 @@
-balanceador:
+web:
     build: .
     links:
         - redis
