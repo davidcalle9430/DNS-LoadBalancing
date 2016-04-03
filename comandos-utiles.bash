@@ -34,3 +34,10 @@ docker-machine ip default
 
 # agregar una redirección proxy a los puertos, para el docker machine cambiar los puertos y las ips para que corresponda
 netsh interface portproxy add v4tov4 listenaddress=127.0.0.1 listenport=80 connectaddress=192.168.99.100 connectport=80
+
+#eliminar no usados
+docker rmi $(docker images -q -f dangling=true)
+
+docker save -o <save image to path> <image name>
+
+docker load -i <path to image tar file>
