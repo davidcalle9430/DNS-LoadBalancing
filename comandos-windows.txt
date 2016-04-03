@@ -1,4 +1,4 @@
-docker run --name bind -d --publish 53:53/udp --publish 10000:10000/tcp 1b1
-netsh interface portproxy add v4tov4 listenaddress=127.0.0.1 listenport=80 connectaddress=192.168.99.100 connectport=80
+docker run --name bind -d --publish 53:53/udp --publish 10000:10000 1b1
+netsh interface portproxy add v4tov4 listenaddress=127.0.0.1 listenport=10000 connectaddress=192.168.99.100 connectport=10000
 netsh interface portproxy delete v4tov4 listenport=10000 listenaddress=127.0.0.1
 interface portproxy show all
