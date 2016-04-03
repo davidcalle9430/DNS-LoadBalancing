@@ -1,0 +1,5 @@
+BIND:
+    image: sameersbn/bind:latest
+    ports:
+      - "10000:10000"
+      - "53:53"
